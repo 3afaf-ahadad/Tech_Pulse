@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    @apply bg-luxury-com-dark text-gray-300;
+    font-family: 'Outfit', sans-serif;
+}
