@@ -12,11 +12,11 @@ export default {
             coffee: "#5C4A4A",
           },
           com: {
-            dark: "#0D1117", // Un bleu-noir profond (style GitHub Dark)
-            terminal: "#161B22", // Un gris-bleu pour les cartes et sections
-            cyan: "#7EE7F2", // Pour les titres et liens (très "tech")
-            code: "#79C0FF", // Un bleu clair pour le texte important
-            purple: "#D2A8FF", // Une touche de violet pour le côté créatif
+            dark: "#0D1117",
+            terminal: "#161B22",
+            cyan: "#7EE7F2",
+            code: "#79C0FF",
+            purple: "#D2A8FF",
           },
         },
       },
