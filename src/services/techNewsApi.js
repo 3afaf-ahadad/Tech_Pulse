@@ -11,10 +11,9 @@ export const techNewsApi = createApi({
     getRecentTechNews: builder.query({
       // method GET
       query: () => "articles?tag=technology&per_page=10", // l'URL du endpoint
-      
     }),
   }),
 });
 
-// une hook auto-géneré par RTK 
+// une hook auto-généré par RTK
 export const { useGetRecentTechNewsQuery } = techNewsApi;
