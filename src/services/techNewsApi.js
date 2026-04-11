@@ -10,7 +10,7 @@ export const techNewsApi = createApi({
   endpoints: (builder) => ({
     getRecentTechNews: builder.query({
       // method GET
-      query: () => "articles", // l'URL du endpoint
+      query: () => "articles?tag=technology&per_page=10", // l'URL du endpoint
     }),
   }),
 });
