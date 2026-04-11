@@ -9,27 +9,33 @@ export default function EventCard() {
     return <p>There was an Error 😿</p>;
   }
 
-  // console.log("Description : ", data[2].description)
   return (
     <div>
       {data.map((post) => (
-        <article  key={post.id}>
+        <article key={post.id}>
           <h2>
             {" "}
-            <hr /> {post.title} {console.log("Description : ", post.description)}
+            <hr />
+            <a href={post.url}></a> {post.title}
           </h2>
-          <img src={post.social_image} alt="image" />
-          <br />
+          <img src={post.social_image} alt={post.title} />
+          
           <div className="tags">
+            Tags :{" "}
             {post.tag_list.map((tag) => (
-              <span>{tag} </span>
+              <span key={tag}>{tag} </span>
             ))}
           </div>
-          <br />
-          <br />
+          
+          <p>
+            {" "}
+            Description :{" "}
+            {post.description.replace("&lt;!DOCTYPE html&gt;", "")}{" "}
+          </p>
+          
           <footer>
             Author: {post.user.username}
-            <br />
+            
             Published : {post.readable_publish_date}
           </footer>
         </article>
