@@ -10,34 +10,40 @@ export default function EventCard() {
   }
 
   return (
-    <div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
       {data.map((post) => (
-        <article key={post.id}>
+        <article
+          className="bg-luxury-com-dark text-blue-50 rounded-xl overflow-hidden shadow-md flex flex-col"
+          key={post.id}
+        >
           <h2>
-            {" "}
             <hr />
-            <a href={post.url}></a> {post.title}
+            {post.title}
           </h2>
-          <img src={post.social_image} alt={post.title} />
-          
-          <div className="tags">
-            Tags :{" "}
+          <img
+            className="w-full h-58 object-cover"
+            src={post.social_image}
+            alt={post.title}
+          />
+
+          <div className="p-5 flex flex-col gap-4">
+            Tags :
             {post.tag_list.map((tag) => (
-              <span key={tag}>{tag} </span>
+              <span className="block" key={tag}>{tag}</span>
             ))}
-          </div>
-          
           <p>
-            {" "}
-            Description :{" "}
-            {post.description.replace("&lt;!DOCTYPE html&gt;", "")}{" "}
+            Description :{post.description.replace("&lt;!DOCTYPE html&gt;", "")}
+            <a href={post.url} target="_blank" rel="noopener noreferrer">
+              Read More
+            </a>
           </p>
-          
+
           <footer>
-            Author: {post.user.username}
-            
-            Published : {post.readable_publish_date}
+            <p>Author: {post.user.username}</p>
+            <p>Published : {post.readable_publish_date}</p>
           </footer>
+          </div>
+
         </article>
       ))}
     </div>
