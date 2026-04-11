@@ -2,7 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { techNewsApi } from "./services/techNewsApi";
 import { setupListeners } from "@reduxjs/toolkit/query";
 
-export const store = configureStore({
+const store = configureStore({
   reducer: {
     // definir le slice techNewsApi et auto-générer des 'reducers'
     [techNewsApi.reducerPath]: techNewsApi.reducer,
@@ -14,3 +14,4 @@ export const store = configureStore({
 
 // Gestion automatique de la cache, rafraîchissement des données, reconnection
 setupListeners(store.dispatch);
+export default store;
